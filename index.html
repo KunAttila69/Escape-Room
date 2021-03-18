@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onkeydown="dsa(event)">
+    <div id="emberke"></div>
+    <div id="main">
+        <div onclick="SzefJatek()" id="szef"></div>
+        <div id="valami"></div>
+        <div onclick="SzefJatek()" id="valami2"></div>
+        <div id="nagykepHatter">
+            <div id="nagykep">
+                <div onclick="Kilep()" id="exit">X</div>
+                <div id="nagykepContent">
+                    
+                    <div id="szamok">
+                        <div id="kijelzo"></div>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button>CLR</button>
+                        <button>0</button>
+                        <button>SUB</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function SzefJatek(){
+        document.getElementById("nagykepHatter").style.display = "block";
+    }
+    function Kilep(){
+        document.getElementById("nagykepHatter").style.display = "none";
+    }
+    function SzamKijelzes(szam){
+
+    }
+    let samx = 0;
+    let samy = 0;
+    let emberke = document.getElementById('emberke');
+
+    function dsa(asd) { 
+        var luxy = event.key;
+        if(samy <= -5 && samy >= -20 && samx <= -20 && samx >= -40 && luxy == "e"){
+            SzefJatek()
+        }
+        switch (luxy) {
+            case "w":
+                emberke.style.backgroundImage = "url('hatul.png')";
+                samx-= 5;
+                if(samx <= - 50){
+                    return 50;
+                }
+                emberke.style.top = samx +'vh';
+                break;
+            case "s":
+                emberke.style.backgroundImage = "url('elol.png')";
+                samx+= 5;
+                emberke.style.top = samx +'vh' ;
+
+                break;
+            case "d":
+                emberke.style.backgroundImage = "url('jobb.png')";
+                samy+= 5;
+                emberke.style.left = samy +'vw' ;
+
+                break;
+            case "a":
+                emberke.style.backgroundImage = "url('bal.png')";
+                samy-= 5;
+                emberke.style.left = samy +'vw';
+
+                break;
+
+            default:
+                break;
+        }
+        console.log(samx, samy)
+        
+    }
+</script>
+</html>
