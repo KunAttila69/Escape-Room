@@ -10,7 +10,7 @@
 <body onkeydown="dsa(event)">
     <div id="emberke"></div>
     <div id="main">
-        <div onclick="SzefJatek()" id="szef"></div>
+        <div id="szef"></div>
         <div id="valami"></div>
         <div onclick="SzefJatek()" id="valami2"></div>
         <div id="nagykepHatter">
@@ -54,7 +54,7 @@
 
     function dsa(asd) { 
         var luxy = event.key;
-        if(samy <= -5 && samy >= -20 && samx <= -20 && samx >= -40 && luxy == "e"){
+        if(samy <= -10 && samy >= -20 && samx <= -20 && samx >= -40 && luxy == "e"){
             SzefJatek()
         }
         switch (luxy) {
@@ -62,25 +62,34 @@
                 emberke.style.backgroundImage = "url('hatul.png')";
                 samx-= 5;
                 if(samx <= - 50){
-                    return 50;
+                    samx = -50;
                 }
                 emberke.style.top = samx +'vh';
                 break;
             case "s":
                 emberke.style.backgroundImage = "url('elol.png')";
                 samx+= 5;
+                if(samx >= 30){
+                    samx = 30;
+                }
                 emberke.style.top = samx +'vh' ;
 
                 break;
             case "d":
                 emberke.style.backgroundImage = "url('jobb.png')";
                 samy+= 5;
+                if(samy >= 40.5){
+                    samy = 40.5;
+                }
                 emberke.style.left = samy +'vw' ;
 
                 break;
             case "a":
                 emberke.style.backgroundImage = "url('bal.png')";
                 samy-= 5;
+                if(samy <= - 47.5){
+                    samy = -47.5;
+                }
                 emberke.style.left = samy +'vw';
 
                 break;

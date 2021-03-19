@@ -1,15 +1,22 @@
 *{
     margin: 0;
 }
+body{
+
+}
 div{
     width: 200px;
     height: 150px;
     position: absolute;
 }
 #szef{
-    background-color: grey;
+    background-image: url("szef.jpg");
+    width: 175px;
+    height: 170px;
+    background-size: cover;
     left: 30vw;
     top: 25vh;
+
 }
 #valami{
     background-color: gray;
@@ -25,6 +32,7 @@ div{
 #main{
     width: 100vw;
     height: 100vh;
+    background-image: url("padlooskor.jpg");
 }
 
 #nagykep{
