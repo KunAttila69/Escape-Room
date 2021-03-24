@@ -1,8 +1,8 @@
 *{
     margin: 0;
 }
-body{
-
+#hatter{
+    background-image: url("Hatteroskor");
 }
 div{
     width: 200px;
@@ -16,18 +16,47 @@ div{
     background-size: cover;
     left: 30vw;
     top: 25vh;
-
 }
-#valami{
+#forditos1{
     background-color: gray;
-    left: 1500px;
-    top: 100px;
+    left: 40vw;
+    top: 70vh;
     
+    text-align: center;
+    font-size: 60px;
+    color: darkgoldenrod;
 }
-#valami2{
+#forditos2{
     background-color: gray;
-    left: 800px;
-    top: 700px;
+    left: 75vw;
+    top: 10vh;
+    
+    text-align: center;
+    font-size: 60px;
+    color: darkgoldenrod;
+}
+#forditos3{
+    background-color: gray;
+    left: 60vw;
+    top: 30vh;
+    
+    text-align: center;
+    font-size: 60px;
+    color: darkgoldenrod;
+}
+#forditos4{
+    background-color: gray;
+    left: 10vw;
+    top: 65vh;
+    
+    text-align: center;
+    font-size: 60px;
+    color: darkgoldenrod;
+}
+div p{
+    margin-top: 4vh;
+    color: black;
+    font-size: 20px;
 }
 #main{
     width: 100vw;
@@ -72,12 +101,17 @@ div{
     background-color: gray;
 }
 #kijelzo{
+    height: 12.5vh;
+    padding-top: 2vh;
     background-color: seagreen;
+    color: chartreuse;
+    text-align: center;
+    font-size: 7.5vh;
 }
 button{
     position: relative;
-    top: 150px;
-    left: 5px;
+    top: 15vh;
+    left: 0.5vw;
     border-radius: none;
     border: 4px solid black;
     background-color: rgb(116, 116, 116);
