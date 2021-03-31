@@ -1,9 +1,6 @@
 *{
     margin: 0;
 }
-#hatter{
-    background-image: url("Hatteroskor");
-}
 div{
     width: 200px;
     height: 150px;
@@ -39,7 +36,6 @@ div{
     background-color: gray;
     left: 60vw;
     top: 30vh;
-    
     text-align: center;
     font-size: 60px;
     color: darkgoldenrod;
@@ -65,7 +61,7 @@ div p{
 }
 
 #nagykep{
-    display: block;
+    display: none;
     background-color: salmon;
     width: 75vw;
     height: 50vh;
@@ -84,11 +80,11 @@ div p{
 #exit{
     margin: 5px;
     background-color: gray;
-    width: 10vh;
-    height: 10vh;
+    width: 5vh;
+    height: 5vh;
     padding-top: auto;
     text-align: center;
-    font-size: 9vh;
+    font-size: 4.5vh;
     border-radius: 50%;
     font-family:Arial, Helvetica;
 }
@@ -108,7 +104,7 @@ div p{
     text-align: center;
     font-size: 7.5vh;
 }
-button{
+#szamok button{
     position: relative;
     top: 15vh;
     left: 0.5vw;
@@ -133,4 +129,41 @@ button{
     margin-top: calc(50vh - 125px);
     position: absolute;
     z-index: 1;
+}
+#kerdesHatter{
+    display: none;
+    background-color: salmon;
+    width: 75vw;
+    height: 50vh;
+    position: absolute;
+    left: 12.5vw;
+    top: 25vh;
+    z-index: 2;
+}
+#kerdes{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 50px;
+}
+#valaszok{
+    background-color: green;
+    position: absolute;
+    width: 50vw;
+    height: 35vh;
+    left: 15%;
+}
+#valaszok button{
+    width: 45vw;
+    height: 5vh;
+    margin: 1vw;
+    margin-left: 2.5vw;
+    font-size: 30px;
+}
+#valaszGomb{
+    position: relative;
+    margin-left: 26.25vw;
+    margin-top: 35vh;
+    width: 20vw;
+    height: 5vh;
+    font-size: 2vw;
 }
