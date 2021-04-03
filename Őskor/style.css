@@ -75,7 +75,7 @@ div p{
     width: 100vw;
     height: 100vh;
     background-color: rgba(116, 116, 116, 0.782);
-    z-index: 2;
+    z-index: 4;
 }
 #exit{
     background-color: gray;
@@ -120,14 +120,14 @@ div p{
     top: 2.25vh;
 }
 #emberke {
-    background-image: url('ősZsiga/elol1.png');
+    background-image: url('ősZsiga/elol0.png');
     background-size: cover;
     width: 300px;
     height: 300px;
     margin: calc(50vw - 125px);
     margin-top: calc(50vh - 125px);
     position: absolute;
-    z-index: 1;
+    z-index: 3;
 }
 #kerdesHatter1, #kerdesHatter2, #kerdesHatter3, #kerdesHatter4{
     display: none;
@@ -137,7 +137,7 @@ div p{
     position: absolute;
     left: 12.5vw;
     top: 25vh;
-    z-index: 2;
+    z-index: 4;
 }
 #kerdes1,#kerdes2,#kerdes3,#kerdes4{
     text-align: center;
@@ -182,4 +182,10 @@ input::-webkit-inner-spin-button {
 }
 #kijelolt{
     background-color: gray;
+}
+.hús{
+    width: 200px;
+    height: 150px;
+    background: url("csirkecomb.png");
+    z-index: 2;
 }

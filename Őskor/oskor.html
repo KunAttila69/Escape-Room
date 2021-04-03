@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,9 +80,12 @@
     secretCode = secretCode.toString();
     let szef = document.getElementById("szef")
     let megjelelotValasz;
+    let eltaltvalasz = [];
     let randomFeladat = [];
+    let hus = [];
     let y = 0
     let x = 0
+    let zsiga = 0
 
     for (let i = 0; i < 5; i++) {
         feladatok = feladatok.sort(() => Math.random() - 0.5);
@@ -160,17 +160,32 @@
             let jeloltValasz = document.getElementById("kijelolt")
             if(jeloltValasz.innerHTML == (randomFeladat[kerdessorszam]).jovalasz){
                 Felfordít(x)
+                eltaltvalasz[kerdessorszam] = true;
             }
         }else if((randomFeladat[kerdessorszam]).tipus == 2){
             if(document.getElementById("evszam").value == (randomFeladat[kerdessorszam]).valasz){
                 Felfordít(x)
+                eltaltvalasz[kerdessorszam] = true;
             }
         }
         
     }
+    function Eves(z){
+        if(hus[z] != true){
+            zsiga++;
+            emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
+            if(zsiga >= 3){
+                zsiga = 3
+            }
+            document.getElementById("comb"+z).style.background = "url('csont.png')"
+            hus[z] = true
+        }else{
+            alert("Ezt a húst már megetted!")
+        }
+    }
     //Kövek felfordítása
     function Felfordít(asd) {
-        document.getElementById("forditos" + asd).innerHTML = "<div class='hús'></div>";
+        document.getElementById("forditos" + asd).innerHTML = "<div id='comb"+asd+"' class='hús'></div>";
     }
     //Karakter mozgastása
     function Mozgás(event) {
@@ -182,25 +197,40 @@
         }
         //A kő1 helye
         if (samy <= 0 && samy >= -10 && samx <= 25 && samx >= 5 && billentyu == "e") {
+           if(eltaltvalasz[1] == true){
+               Eves(1)
+           }else{
             Kerdes(1)
-            
+           }
         }
         //A kő2 helye
         if (samy <= 40 && samy >= 25 && samx <= -35 && samx >= -50 && billentyu == "e") {
+            if(eltaltvalasz[2] == true){
+               Eves(2)
+           }else{
             Kerdes(2)
+           }
         }
         //A kő2 helye
         if (samy <= 25 && samy >= 10 && samx <= -20 && samx >= -35 && billentyu == "e") {
+            if(eltaltvalasz[3] == true){
+               Eves(3)
+           }else{
             Kerdes(3)
+           }
         }
         //A kő2 helye
         if (samy <= -25 && samy >= -40 && samx <= 20 && samx >= 0 && billentyu == "e") {
+            if(eltaltvalasz[4] == true){
+               Eves(4)
+           }else{
             Kerdes(4)
+           }
         }
         //Mozgás
         switch (billentyu) {
             case "w":
-                emberke.style.backgroundImage = "url('ősZsiga/hatul1.png')";
+                emberke.style.backgroundImage = "url('ősZsiga/hatul"+zsiga+".png')";
                 samx -= 5;
                 if (samx <= - 50) {
                     samx = -50;
@@ -212,7 +242,7 @@
                 }
                 break;
             case "s":
-                emberke.style.backgroundImage = "url('ősZsiga/elol1.png')";
+                emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
                 samx += 5;
                 if (samx >= 30) {
                     samx = 30;
@@ -224,7 +254,7 @@
                 }
                 break;
             case "d":
-                emberke.style.backgroundImage = "url('ősZsiga/jobb1.png')";
+                emberke.style.backgroundImage = "url('ősZsiga/jobb"+zsiga+".png')";
                 samy += 5;
                 if (samy >= 39.5) {
                     samy = 39.5;
@@ -236,7 +266,7 @@
                 }
                 break;
             case "a":
-                emberke.style.backgroundImage = "url('ősZsiga/bal1.png')";
+                emberke.style.backgroundImage = "url('ősZsiga/bal"+zsiga+".png')";
                 samy -= 5;
                 if (samy <= - 47.5) {
                     samy = -47.5;
@@ -255,6 +285,4 @@
 
     }
 </script>
-
 </html>
-
