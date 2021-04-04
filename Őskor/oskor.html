@@ -12,30 +12,21 @@
 <body onkeydown="Mozgás(event)">
     <div id="emberke"></div>
     <div id="main">
-        <div id="szef"></div>
+        <div id="kijarat"></div>
         <div id="forditos1"></div>
         <div id="forditos2"></div>
         <div id="forditos3"></div>
         <div id="forditos4"></div>
         <div id="nagykepHatter">
             <div id="nagykep">
-                <div onclick="SzefKilep()" id="exit">X</div>
+                <div onclick="TolosKilep()" id="exit">X</div>
                 <div id="nagykepContent">
-
-                    <div id="szamok">
-                        <div id="kijelzo"></div>
-                        <button onclick="SzamKijelzes(1)">1</button>
-                        <button onclick="SzamKijelzes(2)">2</button>
-                        <button onclick="SzamKijelzes(3)">3</button>
-                        <button onclick="SzamKijelzes(4)">4</button>
-                        <button onclick="SzamKijelzes(5)">5</button>
-                        <button onclick="SzamKijelzes(6)">6</button>
-                        <button onclick="SzamKijelzes(7)">7</button>
-                        <button onclick="SzamKijelzes(8)">8</button>
-                        <button onclick="SzamKijelzes(9)">9</button>
-                        <button onclick="ClearScreen()">CLR</button>
-                        <button onclick="SzamKijelzes(0)">0</button>
-                        <button onclick="SubmitCode()">SUB</button>
+                    <div id="csíktartó">
+                        <div id="csík"></div>
+                    </div>
+                    <div id="kicsiKijáratTartó">
+                        <div id="kicsiKijarat"></div>
+                        <div id="kő"></div>
                     </div>
                 </div>
             </div>
@@ -86,6 +77,14 @@
     let y = 0
     let x = 0
     let zsiga = 0
+    let csíktartó = document.getElementById("csíktartó");
+    let csíktartópadding = 45;
+    let csíktartóheight = 3;
+    let csík = document.getElementById("csík");
+    let csíkWidth = 0;
+    let csíkjatek;
+    let kőX = 8.7;
+    
 
     for (let i = 0; i < 5; i++) {
         feladatok = feladatok.sort(() => Math.random() - 0.5);
@@ -105,12 +104,15 @@
     }
 
     //Széfes játék megnyitása
-    function SzefJatek() {
+    function TolosJatek() {
         document.getElementById("nagykepHatter").style.display = "block";
         document.getElementById("nagykep").style.display = "block";
+        csíkjatek = true;
     }
+    
+    
     //Széfes játék bezárása
-    function SzefKilep() {
+    function TolosKilep() {
         document.getElementById("nagykepHatter").style.display = "none";
         document.getElementById("nagykep").style.display = "none";
     }
@@ -186,14 +188,35 @@
     }
     //Karakter mozgastása
     function Mozgás(event) {
-        var billentyu =  event.key;
+        let billentyu =  event.key;
         billentyu = billentyu.toLowerCase();
-        //A széf helye
-        if (samy <= -10 && samy >= -20 && samx <= -20 && samx >= -40 && billentyu == "e") {
-            SzefJatek()
+        if(csíkjatek == true){
+            if(billentyu == "e"){
+                if(csíkWidth >= 265){
+                    csíkWidth == 265;
+                    document.getElementById("kijarat").style.backgroundImage = "url('kijarat2.png')"
+                }else{
+                    kőX += csíkWidth * 0.00175
+                    document.getElementById("kő").style.marginLeft = kőX + "vw";
+                    csíkWidth += 5;
+                    csíktartópadding -= 5;
+                    csíktartóheight += 5;
+                    csíktartó.style.height = csíktartóheight + "px";
+                    csíktartó.style.paddingTop = "calc(25vh + "+csíktartópadding+"px)" ;
+                    csík.style.height = csíkWidth+"px";
+                }        
+            }
+        }
+        //A kijárata helye
+        if (samy <= 5 && samy >= -25 && samx <= -10 && samx >= -45 && billentyu == "e") {
+            if(zsiga >= 4){
+                TolosJatek()
+            }else{
+                alert("Zsiga még nem elég erős")
+            }
         }
         //A kő1 helye
-        if (samy <= 0 && samy >= -10 && samx <= 25 && samx >= 5 && billentyu == "e") {
+        if (samy <= 0 && samy >= -25 && samx <= 25 && samx >= 5 && billentyu == "e") {
            if(eltaltvalasz[1] == true){
                Eves(1)
            }else{
@@ -201,22 +224,22 @@
            }
         }
         //A kő2 helye
-        if (samy <= 40 && samy >= 25 && samx <= -35 && samx >= -50 && billentyu == "e") {
+        if (samy <= 40 && samy >= 30 && samx <= -20 && samx >= -35 && billentyu == "e") {
             if(eltaltvalasz[2] == true){
                Eves(2)
            }else{
             Kerdes(2)
            }
         }
-        //A kő2 helye
-        if (samy <= 25 && samy >= 10 && samx <= -20 && samx >= -35 && billentyu == "e") {
+        //A kő3 helye
+        if (samy <= 20 && samy >= 10 && samx <= -5 && samx >= -25 && billentyu == "e") {
             if(eltaltvalasz[3] == true){
                Eves(3)
            }else{
             Kerdes(3)
            }
         }
-        //A kő2 helye
+        //A kő4 helye
         if (samy <= -25 && samy >= -40 && samx <= 20 && samx >= 0 && billentyu == "e") {
             if(eltaltvalasz[4] == true){
                Eves(4)
@@ -229,11 +252,11 @@
             case "w":
                 emberke.style.backgroundImage = "url('ősZsiga/hatul"+zsiga+".png')";
                 samx -= 5;
-                if (samx <= - 50) {
-                    samx = -50;
+                if (samx <= -30) {
+                    samx = -30;
                 }
                 emberke.style.top = samx + 'vh';
-                SzefKilep()
+                TolosKilep()
                 for (let i = 1; i < 5; i++) {
                     KerdesKilep(i)
                 }
@@ -245,7 +268,7 @@
                     samx = 30;
                 }
                 emberke.style.top = samx + 'vh';
-                SzefKilep()
+                TolosKilep()
                 for (let i = 1; i < 5; i++) {
                     KerdesKilep(i)
                 }
@@ -257,7 +280,7 @@
                     samy = 39.5;
                 }
                 emberke.style.left = samy + 'vw';
-                SzefKilep()
+                TolosKilep()
                 for (let i = 1; i < 5; i++) {
                     KerdesKilep(i)
                 }
@@ -269,7 +292,7 @@
                     samy = -47.5;
                 }
                 emberke.style.left = samy + 'vw';
-                SzefKilep()
+                TolosKilep()
                 for (let i = 1; i < 5; i++) {
                     KerdesKilep(i)
                 }
@@ -281,5 +304,6 @@
         console.log(samx, samy)
 
     }
+    
 </script>
 </html>
