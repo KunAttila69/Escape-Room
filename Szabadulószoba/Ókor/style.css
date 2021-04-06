@@ -9,13 +9,13 @@ div{
     height: 200px;
     position: absolute;
 }
-#szef{
-    background-image: url("szef.jpg");
-    width: 175px;
-    height: 170px;
+#szarkofag{
+    background-image: url("szarkofag1.png");
+    width: 22.5vw;
+    height: 22.5vw;
     background-size: cover;
-    left: 30vw;
-    top: 25vh;
+    left: 40vw;
+    top: 20vh;
 }
 #forditos1{
     background-image: url("vaza.png");
@@ -50,6 +50,16 @@ div{
     background-image: url("vaza.png");
     background-size: cover;
     left: 5vw;
+    top: 70vh;
+    
+    text-align: center;
+    font-size: 60px;
+    color: darkgoldenrod;
+}
+#forditos5{
+    background-image: url("vaza.png");
+    background-size: cover;
+    left: 45vw;
     top: 70vh;
     
     text-align: center;
@@ -136,7 +146,7 @@ div p{
     position: absolute;
     z-index: 3;
 }
-#kerdesHatter1, #kerdesHatter2, #kerdesHatter3, #kerdesHatter4{
+#kerdesHatter1, #kerdesHatter2, #kerdesHatter3, #kerdesHatter4, #kerdesHatter5{
     display: none;
     background-color: salmon;
     width: 75vw;
@@ -146,19 +156,19 @@ div p{
     top: 25vh;
     z-index: 4;
 }
-#kerdes1,#kerdes2,#kerdes3,#kerdes4{
+#kerdes1,#kerdes2,#kerdes3,#kerdes4,#kerdes5{
     text-align: center;
     margin-top: 1vw;
     font-size: 2.5vw;
 }
-#valaszok1,#valaszok2,#valaszok3,#valaszok4{
-    background-color: green;
+#valaszok1,#valaszok2,#valaszok3,#valaszok4,#valaszok5{
+    background-color: rgb(1, 115, 149);
     position: absolute;
     width: 50vw;
     height: 35vh;
     left: 15%;
 }
-#valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button{
+#valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button,#valaszok5 button{
     width: 45vw;
     height: 5vh;
     margin: 1vw;
@@ -190,9 +200,11 @@ input::-webkit-inner-spin-button {
 #kijelolt{
     background-color: gray;
 }
-.hús{
-    width: 200px;
-    height: 150px;
-    background: url("csirkecomb.png");
+.papir{
+    width: 100px;
+    height: 75px;
+    margin: 50px;
+    background: url("guriga.png");
     z-index: 2;
+    background-size: cover;
 }

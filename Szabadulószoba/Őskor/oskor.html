@@ -17,6 +17,7 @@
         <div id="forditos2"></div>
         <div id="forditos3"></div>
         <div id="forditos4"></div>
+        <div id="forditos5"></div>
         <div id="nagykepHatter">
             <div id="nagykep">
                 <div onclick="TolosKilep()" id="exit">X</div>
@@ -59,6 +60,13 @@
             </div>
             <button onclick="SubmitValasz(4)" id="valaszGomb">Megerősítés</button>
         </div>
+        <div id="kerdesHatter5">
+            <div onclick="KerdesKilep(5)" id="exit">X</div>
+            <h1 id="kerdes5"></h1>
+            <div id="valaszok5">
+            </div>
+            <button onclick="SubmitValasz(5)" id="valaszGomb">Megerősítés</button>
+        </div>
     </div>
 </body>
 <script src="oskorkerdesek.js"></script>
@@ -86,12 +94,12 @@
     let kőX = 8.7;
     
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
         feladatok = feladatok.sort(() => Math.random() - 0.5);
         randomFeladat[i] = feladatok.pop();
     }
 
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
         if((randomFeladat[i]).tipus == 1){
             document.getElementById("kerdes"+i).innerHTML = (randomFeladat[i]).kerdes;
             for (let j = 0; j < 4; j++) {
@@ -109,8 +117,6 @@
         document.getElementById("nagykep").style.display = "block";
         csíkjatek = true;
     }
-    
-    
     //Széfes játék bezárása
     function TolosKilep() {
         document.getElementById("nagykepHatter").style.display = "none";
@@ -120,7 +126,6 @@
         document.getElementById("nagykepHatter").style.display = "none";
         document.getElementById("kerdesHatter"+kerdesszam).style.display = "none";
     }
-
     //Széf kijelzőjének kezelése
     function SzamKijelzes(szam) {
         if (kijelzo.innerHTML.length <= 3) {
@@ -208,7 +213,7 @@
             }
         }
         //A kijárata helye
-        if (samy <= 5 && samy >= -25 && samx <= -10 && samx >= -45 && billentyu == "e") {
+        if (samy <= 5 && samy >= -25 && samx <= -10 && samx >= -25 && billentyu == "e") {
             if(zsiga >= 4){
                 TolosJatek()
             }else{
@@ -245,6 +250,13 @@
                Eves(4)
            }else{
             Kerdes(4)
+           }
+        }
+        if (samy <= -25 && samy >= -35 && samx <= -25 && samx >= -35 && billentyu == "e") {
+            if(eltaltvalasz[5] == true){
+               Eves(5)
+           }else{
+            Kerdes(5)
            }
         }
         //Mozgás

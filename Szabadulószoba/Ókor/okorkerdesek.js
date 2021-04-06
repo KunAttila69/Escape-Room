@@ -43,6 +43,6 @@ feladatok = [
     {
         tipus: 2,
         kerdes: "Hány Gízai piramis van?",
-        valasz: "3"
+        valasz: 3
     }
 ]
