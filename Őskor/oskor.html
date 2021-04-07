@@ -139,40 +139,42 @@
         if((randomFeladat[kerdessorszam]).tipus == 1){
             let jeloltValasz = document.getElementById("kijelolt")
             if(jeloltValasz.innerHTML == (randomFeladat[kerdessorszam]).jovalasz){
-                Felfordít(x)
                 eltaltvalasz[kerdessorszam] = true;
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='hús'></div>";
             }else{
-                Felfordít(x)
                 eltaltvalasz[kerdessorszam] = true;
-                rosszvalasz[kerdessorszam] = true;
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='romlotthús'></div>";
             }
         }else if((randomFeladat[kerdessorszam]).tipus == 2){
             if(document.getElementById("evszam"+kerdessorszam).value == randomFeladat[kerdessorszam].valasz){
-                Felfordít(x)
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='hús'></div>";
                 eltaltvalasz[kerdessorszam] = true;
             }else{
-                Felfordít(x)
                 eltaltvalasz[kerdessorszam] = true;
-                rosszvalasz[kerdessorszam] = true;
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='romlotthús'></div>";
             }
         }
+        KerdesKilep(x)
         
     }
     function Eves(z){
         if(hus[z] != true){
-            zsiga++;
+            if(document.getElementById("comb"+z).className == "hús"){
+                zsiga++;
+            }else if(document.getElementById("comb"+z).className == "romlotthús") {
+                zsiga--;
+                if (zsiga < 0) {
+                    alert("Zsiga éhenhalt")
+                    location.reload();
+                }
+            }
             emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
-            document.getElementById("comb"+z).style.background = "url('csont.png')"
-            hus[z] = true
+                document.getElementById("comb"+z).style.background = "url('csont.png')"
+                hus[z] = true
         }else{
             alert("Ezt a húst már megetted!")
         }
     }
-    //Kövek felfordítása
-    function Felfordít(asd) {
-        if(rosszvalasz[asd] == true){
-            document.getElementById("forditos" + asd).innerHTML = "<div id='comb"+asd+"' class='hús'></div>";
-        }
     //Karakter mozgastása
     function Mozgás(event) {
         let billentyu =  event.key;
@@ -196,10 +198,13 @@
         }
         //A kijárata helye
         if (samy <= 5 && samy >= -25 && samx <= -10 && samx >= -25 && billentyu == "e") {
-            if(zsiga >= 5){
-                TolosJatek()
-            }else{
-                alert("Zsiga még nem elég erős")
+            for (let i = 0; i < eltaltvalasz.length; i++) {
+                if (eltaltvalasz[i] != true) {
+                    continue
+                }
+                if (i == 5) {
+                    TolosJatek();
+                }
             }
         }
         //A kő1 helye
