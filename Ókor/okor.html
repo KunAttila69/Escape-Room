@@ -82,6 +82,8 @@
     let zsiga = 0
     let teto = document.getElementById("teto")
     let kicsiSzarkofag = document.getElementById("kicsiSzarkofag")
+    let felrakottteto;
+    let toloskilepett;
 
     
     teto.addEventListener("dragstart", Húzás);
@@ -116,6 +118,7 @@
     function SzarkofagKilep() {
         document.getElementById("nagykepHatter").style.display = "none";
         document.getElementById("nagykep").style.display = "none";
+        toloskilepett = true
     }
     function Húzás(){
         setTimeout(()=> (this.id += "dragged"), 0)
@@ -131,6 +134,7 @@
         kicsiSzarkofag.style.backgroundImage = "url('szarkofag2.png')"
         document.getElementById("szarkofag").style.backgroundImage = "url('szarkofag2.png')"
         emberke.style.display = "none"
+        felrakottteto = true
     }
     function KerdesKilep(kerdesszam){
         document.getElementById("nagykepHatter").style.display = "none";
@@ -205,7 +209,9 @@
                     continue
                 }
                 if (i == 5) {
-                    TolosJatek();
+                    SzarkofagJatek();
+                }else if(felrakottteto == true && toloskilepett == true){
+                        window.open("https://kunattila69.github.io/Escape-Room/Ókor/okor.html","_self")
                 }
             }
         }

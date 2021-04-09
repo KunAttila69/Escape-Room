@@ -89,6 +89,8 @@
     let csíkWidth = 0;
     let csíkjatek;
     let kőX = 8.7;
+    let eltoltkő;
+    let toloskilepett;
     
 
     for (let i = 0; i < 6; i++) {
@@ -118,6 +120,10 @@
     function TolosKilep() {
         document.getElementById("nagykepHatter").style.display = "none";
         document.getElementById("nagykep").style.display = "none";
+        if(csíkWidth == 265){
+            eltoltkő = true
+        }
+        toloskilepett = true
     }
     function KerdesKilep(kerdesszam){
         document.getElementById("nagykepHatter").style.display = "none";
@@ -183,7 +189,7 @@
             if(billentyu == "e"){
                 if(csíkWidth >= 265){
                     csíkWidth == 265;
-                    document.getElementById("kijarat").style.backgroundImage = "url('kijarat2.png')"
+                    document.getElementById("kijarat").style.backgroundImage = "url('kijarat2.png')"    
                 }else{
                     kőX += csíkWidth * 0.00175
                     document.getElementById("kő").style.marginLeft = kőX + "vw";
@@ -203,7 +209,11 @@
                     continue
                 }
                 if (i == 5) {
-                    TolosJatek();
+                    if(eltoltkő != true){
+                        TolosJatek();
+                    }else if(eltoltkő == true && toloskilepett == true){
+                        window.open("https://kunattila69.github.io/Escape-Room/Ókor/okor.html","_self")
+                    }
                 }
             }
         }
