@@ -61,10 +61,8 @@ div p{
 }
 
 #nagykep{
-    border-radius: 25px;
-    border: 6px solid black;
     display: none;
-    background-image: linear-gradient(gray, black);
+    background-color: salmon;
     width: 75vw;
     height: 50vh;
     position: absolute;
@@ -79,30 +77,13 @@ div p{
     background-color: rgba(116, 116, 116, 0.782);
     z-index: 4;
 }
-
-#exit:hover {
-    font-size: 3.25vh;
-    transition: 0.3s;
-    padding: 1px ;
-    width: 3.5vh;
-    height: 3.5vh;
-    cursor: pointer;
-    color: white;
-    border: 2px solid rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
-   
-}
-
-
 #exit{
-    font-weight: bold;
-    border: 2px solid black;
-    background-color: rgb(255, 255, 255);
+    background-color: gray;
     width: 3vh;
     height: 3vh;
     padding-top: auto;
     text-align: center;
-    font-size: 2.75vh;
+    font-size: 3vh;
     border-radius: 50%;
     font-family:Arial, Helvetica;
 }
@@ -126,10 +107,8 @@ div p{
     z-index: 3;
 }
 #kerdesHatter1, #kerdesHatter2, #kerdesHatter3, #kerdesHatter4, #kerdesHatter5{
-    border: 6px solid black;
-    border-radius: 25px;
     display: none;
-    background-image: linear-gradient(gray, black);
+    background-color: salmon;
     width: 75vw;
     height: 50vh;
     position: absolute;
@@ -143,49 +122,26 @@ div p{
     font-size: 2.5vw;
 }
 #valaszok1,#valaszok2,#valaszok3,#valaszok4,#valaszok5{
-    border: 4px solid rgb(0, 0, 0);
-    border-radius: 25px;
-    background-image: linear-gradient(gray, black, green);
+    background-color: rgb(1, 115, 149);
     position: absolute;
     width: 50vw;
     height: 35vh;
     left: 15%;
 }
 #valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button,#valaszok5 button{
-    border-radius: 25px;
     width: 45vw;
     height: 5vh;
     margin: 1vw;
     margin-left: 2.5vw;
-    font-size: 2vw;
-    font-weight: bold;
+    font-size: 1.5vw;
 }
-
-#valaszok1 button:hover,#valaszok2 button:hover,#valaszok3 button:hover,#valaszok4 button:hover,#valaszok5 button:hover {
-    cursor: pointer;
-    border: 3px solid rgb(255, 255, 255);
-    box-shadow: 3px 5px 15px white;
-    
-}
-
-#valaszGomb:hover {
-    cursor: pointer;
-    font-weight: bold;
-    border: 4px solid green;
-    width: 21vw;
-    height: 6vh;
-    box-shadow: 3px 5px 15px green;
-}
-
 #valaszGomb{
-    padding: 5px;
-    border-radius: 25px;
     position: relative;
     margin-left: 26.25vw;
-    margin-top: 42vh;
+    margin-top: 35vh;
     width: 20vw;
     height: 5vh;
-    font-size: 3vw;
+    font-size: 2vw;
     padding: 0;
 }
 #evszam1,#evszam2,#evszam3,#evszam4,#evszam5{
@@ -201,7 +157,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+#kijelolt{
+    background-color: gray;
+}
 .hús{
     width: 200px;
     height: 150px;
@@ -227,11 +185,8 @@ input::-webkit-inner-spin-button {
     background-color: green;
     margin: 1px;
     height: 0px;
-    box-shadow: 0px 5px 10px green;
 }
 #kicsiKijáratTartó{
-    border-radius: 25px;
-    border: 3px solid black;
     background-color: green;
     width: 35vw;
     height: 30vh;
@@ -252,7 +207,4 @@ input::-webkit-inner-spin-button {
     background-size: cover;
     margin-left: 8.7vw;
     margin-top: 2.5vh;
-}
-#kijelolt{
-    background-color: rgb(255, 0, 0)  ;
 }
