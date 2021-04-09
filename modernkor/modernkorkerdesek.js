@@ -38,11 +38,11 @@ feladatok = [
     {
         tipus: 2,
         kerdes: "Melyik évben tört ki az első vh?",
-        valasz: "1914"
+        valasz: 1914
     },
     {
         tipus: 2,
-        kerdes: "Hány korszaka van az őskornak?",
-        valasz: "3"
+        kerdes: "Mikor kezdődött az Angol polgári forradalom?",
+        valasz: 1940
     }
 ]

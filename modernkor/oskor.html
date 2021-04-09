@@ -23,6 +23,11 @@
         <div id="forditos5"></div>
         <div id="nagykepHatter">
             <div id="nagykep">
+                <div class='lap' id='lap0'></div>
+                <div class='lap' id='lap1'></div>
+                <div class='lap' id='lap2'></div>
+                <div class='lap' id='lap3'></div>
+                <div class='lap' id='lap4'></div>
                 <div onclick="SzefKilep()" id="exit">X</div>
                 <div id="nagykepContent">
                     <div id="szamok">
@@ -84,6 +89,7 @@
 <script>
     let samx = 0;
     let samy = 0;
+    let szef = document.getElementById("szef");
     let emberke = document.getElementById('emberke');
     let kijelzo = document.getElementById("kijelzo"); 
     let secretCode = Math.floor(Math.random() * 89999)+10000;
@@ -91,12 +97,14 @@
     let megjelelotValasz;
     let eltaltvalasz = [];
     let randomFeladat = [];
-    let hus = [];
+    let papir = [];
+    let megtaltszamok = 0;
+    let kulcs;
+    let nyitottszef;
     let y = 0
     let x = 0 
     
-
-    for (let i = 0; i < 6; i++) {
+    for (let i = 1; i < 6; i++) {
         feladatok = feladatok.sort(() => Math.random() - 0.5);
         randomFeladat[i] = feladatok.pop();
     }
@@ -117,6 +125,11 @@
     function SzefJatek() {
         document.getElementById("nagykepHatter").style.display = "block";
         document.getElementById("nagykep").style.display = "block";
+
+        for (let i = 0; i < megtaltszamok; i++) {
+            document.getElementById("lap"+i).style.display = "block"
+            document.getElementById("lap"+i).innerHTML = "<h1>"+secretCode[i]+"</h1><p>"+(i+1)+"</p>"
+        }
     }
     //Széfes játék bezárása
     function SzefKilep() {
@@ -144,7 +157,9 @@
     }
     function OpenSafe() {
         szef.style.backgroundImage = 'url("nyitottszef.jpg")'
-        szef.style.width = "20vw;"
+        szef.style.width = "15vw"
+        szef.innerHTML = "<div id='kulcs'></div>"
+        nyitottszef = true;
     }
     //Beírt kód megerősítése
     function SubmitCode() {
@@ -176,13 +191,15 @@
                 eltaltvalasz[kerdessorszam] = true;
             }
         }
-        
+        for (let i = 1; i < 6; i++) {
+            KerdesKilep(i)
+        }
     }
     function Eves(z){
-        if(hus[z] != true){
-            emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
-            document.getElementById("papír"+z).style.backgroundImage = "url('papírures.png')"
-            hus[z] = true
+        if(papir[z] != true){
+            megtaltszamok++
+            document.getElementById("papír"+z).style.backgroundImage = "none";
+            papir[z] = true
         }else{
             alert("Nem találtál semmit")
         }
@@ -198,7 +215,18 @@
         
         //A kijárata helye
         if (samy <= -30 && samy >= -40 && samx <= -15 && samx >= -30 && billentyu == "e") {
-            SzefJatek()
+            if(nyitottszef != true){
+                SzefJatek()
+            }else{
+                document.getElementById("kulcs").style.display = "none"
+                kulcs = true
+                alert("A kulcson kívül nem volt más a széfben.")
+            }
+        }
+        if (samy <= -10 && samy >= -15 && samx <= -25 && samx >= -30 && billentyu == "e") {
+            if (kulcs == true) {
+                alert("Az ajtót sikerült kinyitni.")
+            }
         }
         //A kő1 helye
         if (samy <= -30 && samy >= -45 && samx <= 25 && samx >= 5 && billentyu == "e") {

@@ -214,8 +214,8 @@ div p{
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 #kijelolt{
     background-color: gray;
@@ -226,4 +226,46 @@ input::-webkit-inner-spin-button {
     background: url("papír.png");
     z-index: 2;
     background-size: cover;
+}
+.lap{
+    background-image: url("lap.png");
+    width: 7vw;
+    height: 10vw;
+    z-index: 1;
+    display: none;
+    background-size: cover;
+    box-sizing: border-box;
+    font-size: 3.5vw;
+    text-align: center;
+}
+.lap p{
+    margin: 0;
+}
+#lap0{
+    left: 62vw;
+    top: 1vw;
+}
+#lap1{
+    left: 52vw;
+    top: 1vw;
+}
+#lap2{
+    left: 43vw;
+    top: 4vw;
+}
+#lap3{
+    left: 35vw;
+    top: 14vw;
+}
+#lap4{
+    left: 56vw;
+    top: 14vw;
+}
+#kulcs{
+    background-image: url("kulcs.png");
+    width: 6vw;
+    height: 5vw;
+    background-size: cover;
+    margin-left: 2vw;
+    margin-top: 4vw;
 }
