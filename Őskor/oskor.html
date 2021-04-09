@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onkeydown="Mozgás(event)">
+    <div id="emberke"></div>
+    <div id="main">
+        <div id="kijarat"></div>
+        <div id="forditos1"></div>
+        <div id="forditos2"></div>
+        <div id="forditos3"></div>
+        <div id="forditos4"></div>
+        <div id="forditos5"></div>
+        <div id="nagykepHatter">
+            <div id="nagykep">
+                <div onclick="TolosKilep()" id="exit">X</div>
+                <div id="nagykepContent">
+                    <div id="csíktartó">
+                        <div id="csík"></div>
+                    </div>
+                    <div id="kicsiKijáratTartó">
+                        <div id="kicsiKijarat"></div>
+                        <div id="kő"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="kerdesHatter1">
+            <div onclick="KerdesKilep(1)" id="exit">X</div>
+            <h1 id="kerdes1"></h1>
+            <div id="valaszok1">
+            </div>
+            <button onclick="SubmitValasz(1)" id="valaszGomb">Megerősítés</button>
+        </div>
+        <div id="kerdesHatter2">
+            <div onclick="KerdesKilep(2)" id="exit">X</div>
+            <h1 id="kerdes2"></h1>
+            <div id="valaszok2">
+            </div>
+            <button onclick="SubmitValasz(2)" id="valaszGomb">Megerősítés</button>
+        </div>
+        <div id="kerdesHatter3">
+            <div onclick="KerdesKilep(3)" id="exit">X</div>
+            <h1 id="kerdes3"></h1>
+            <div id="valaszok3">
+            </div>
+            <button onclick="SubmitValasz(3)" id="valaszGomb">Megerősítés</button>
+        </div>
+        <div id="kerdesHatter4">
+            <div onclick="KerdesKilep(4)" id="exit">X</div>
+            <h1 id="kerdes4"></h1>
+            <div id="valaszok4">
+            </div>
+            <button onclick="SubmitValasz(4)" id="valaszGomb">Megerősítés</button>
+        </div>
+        <div id="kerdesHatter5">
+            <div onclick="KerdesKilep(5)" id="exit">X</div>
+            <h1 id="kerdes5"></h1>
+            <div id="valaszok5">
+            </div>
+            <button onclick="SubmitValasz(5)" id="valaszGomb">Megerősítés</button>
+        </div>
+    </div>
+</body>
+<script src="oskorkerdesek.js"></script>
+<script>
+    let samx = 0;
+    let samy = 0;
+    let emberke = document.getElementById('emberke');
+    let megjelelotValasz;
+    let eltaltvalasz = [];
+    let randomFeladat = [];
+    let hus = [];
+    let rosszvalasz = [];
+    let y = 0
+    let x = 0
+    let zsiga = 0
+    let csíktartó = document.getElementById("csíktartó");
+    let csíktartópadding = 45;
+    let csíktartóheight = 3;
+    let csík = document.getElementById("csík");
+    let csíkWidth = 0;
+    let csíkjatek;
+    let kőX = 8.7;
+    
+
+    for (let i = 0; i < 6; i++) {
+        feladatok = feladatok.sort(() => Math.random() - 0.5);
+        randomFeladat[i] = feladatok.pop();
+    }
+
+    for (let i = 1; i < 6; i++) {
+        if((randomFeladat[i]).tipus == 1){
+            document.getElementById("kerdes"+i).innerHTML = (randomFeladat[i]).kerdes;
+            for (let j = 0; j < 4; j++) {
+                document.getElementById("valaszok"+i).innerHTML += '<button onclick="Select(this)" id="valasz'+j+'">'+(randomFeladat[i]).valaszok[j]+'</button>';
+            }
+        }else if((randomFeladat[i]).tipus == 2){
+            document.getElementById("kerdes"+i).innerHTML = (randomFeladat[i]).kerdes;
+            document.getElementById("valaszok"+i).innerHTML= "<input placeholder='Szám megadása' id='evszam"+i+"' type='number'></input>"
+        }
+    }
+
+    //Széfes játék megnyitása
+    function TolosJatek() {
+        document.getElementById("nagykepHatter").style.display = "block";
+        document.getElementById("nagykep").style.display = "block";
+        csíkjatek = true;
+    }
+    //Széfes játék bezárása
+    function TolosKilep() {
+        document.getElementById("nagykepHatter").style.display = "none";
+        document.getElementById("nagykep").style.display = "none";
+    }
+    function KerdesKilep(kerdesszam){
+        document.getElementById("nagykepHatter").style.display = "none";
+        document.getElementById("kerdesHatter"+kerdesszam).style.display = "none";
+    }
+    function Kerdes(sorszam){
+        x = sorszam
+        document.getElementById("nagykepHatter").style.display = "block";
+        document.getElementById("kerdesHatter"+ sorszam).style.display = "block";
+    }
+    function Select(dsa){
+        if(y != 0){
+            document.getElementById("kijelolt").id = ""
+        }
+        dsa.id = "kijelolt";
+        y++
+    }
+    function SubmitValasz(kerdessorszam){
+        if((randomFeladat[kerdessorszam]).tipus == 1){
+            let jeloltValasz = document.getElementById("kijelolt")
+            if(jeloltValasz.innerHTML == (randomFeladat[kerdessorszam]).jovalasz){
+                eltaltvalasz[kerdessorszam] = true;
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='hús'></div>";
+            }else{
+                eltaltvalasz[kerdessorszam] = true;
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='romlotthús'></div>";
+            }
+        }else if((randomFeladat[kerdessorszam]).tipus == 2){
+            if(document.getElementById("evszam"+kerdessorszam).value == randomFeladat[kerdessorszam].valasz){
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='hús'></div>";
+                eltaltvalasz[kerdessorszam] = true;
+            }else{
+                eltaltvalasz[kerdessorszam] = true;
+                document.getElementById("forditos" + x).innerHTML = "<div id='comb"+x+"' class='romlotthús'></div>";
+            }
+        }
+        KerdesKilep(x)
+        
+    }
+    function Eves(z){
+        if(hus[z] != true){
+            if(document.getElementById("comb"+z).className == "hús"){
+                zsiga++;
+            }else if(document.getElementById("comb"+z).className == "romlotthús") {
+                zsiga--;
+                if (zsiga < 0) {
+                    alert("Zsiga éhenhalt")
+                    location.reload();
+                }
+            }
+            emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
+                document.getElementById("comb"+z).style.background = "url('csont.png')"
+                hus[z] = true
+        }else{
+            alert("Ezt a húst már megetted!")
+        }
+    }
+    //Karakter mozgastása
+    function Mozgás(event) {
+        let billentyu =  event.key;
+        billentyu = billentyu.toLowerCase();
+        if(csíkjatek == true){
+            if(billentyu == "e"){
+                if(csíkWidth >= 265){
+                    csíkWidth == 265;
+                    document.getElementById("kijarat").style.backgroundImage = "url('kijarat2.png')"
+                }else{
+                    kőX += csíkWidth * 0.00175
+                    document.getElementById("kő").style.marginLeft = kőX + "vw";
+                    csíkWidth += 5;
+                    csíktartópadding -= 5;
+                    csíktartóheight += 5;
+                    csíktartó.style.height = csíktartóheight + "px";
+                    csíktartó.style.paddingTop = "calc(25vh + "+csíktartópadding+"px)" ;
+                    csík.style.height = csíkWidth+"px";
+                }        
+            }
+        }
+        //A kijárata helye
+        if (samy <= 5 && samy >= -25 && samx <= -10 && samx >= -25 && billentyu == "e") {
+            for (let i = 0; i < eltaltvalasz.length; i++) {
+                if (eltaltvalasz[i] != true) {
+                    continue
+                }
+                if (i == 5) {
+                    TolosJatek();
+                }
+            }
+        }
+        //A kő1 helye
+        if (samy <= 0 && samy >= -25 && samx <= 25 && samx >= 5 && billentyu == "e") {
+           if(eltaltvalasz[1] == true){
+               Eves(1)
+           }else{
+            Kerdes(1)
+           }
+        }
+        //A kő2 helye
+        if (samy <= 40 && samy >= 30 && samx <= -15 && samx >= -30 && billentyu == "e") {
+            if(eltaltvalasz[2] == true){
+               Eves(2)
+           }else{
+            Kerdes(2)
+           }
+        }
+        //A kő3 helye
+        if (samy <= 20 && samy >= 10 && samx <= -5 && samx >= -25 && billentyu == "e") {
+            if(eltaltvalasz[3] == true){
+               Eves(3)
+           }else{
+            Kerdes(3)
+           }
+        }
+        //A kő4 helye
+        if (samy <= -25 && samy >= -40 && samx <= 20 && samx >= 0 && billentyu == "e") {
+            if(eltaltvalasz[4] == true){
+               Eves(4)
+           }else{
+            Kerdes(4)
+           }
+        }
+        if (samy <= -25 && samy >= -35 && samx <= -25 && samx >= -35 && billentyu == "e") {
+            if(eltaltvalasz[5] == true){
+               Eves(5)
+           }else{
+            Kerdes(5)
+           }
+        }
+        //Mozgás
+        switch (billentyu) {
+            case "w":
+                emberke.style.backgroundImage = "url('ősZsiga/hatul"+zsiga+".png')";
+                samx -= 5;
+                if (samx <= -30) {
+                    samx = -30;
+                }
+                emberke.style.top = samx + 'vh';
+                TolosKilep()
+                for (let i = 1; i < 6; i++) {
+                    KerdesKilep(i)
+                }
+                break;
+            case "s":
+                emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
+                samx += 5;
+                if (samx >= 30) {
+                    samx = 30;
+                }
+                emberke.style.top = samx + 'vh';
+                TolosKilep()
+                for (let i = 1; i < 6; i++) {
+                    KerdesKilep(i)
+                }
+                break;
+            case "d":
+                emberke.style.backgroundImage = "url('ősZsiga/jobb"+zsiga+".png')";
+                samy += 5;
+                if (samy >= 45) {
+                    samy = 45;
+                }
+                emberke.style.left = samy + 'vw';
+                TolosKilep()
+                for (let i = 1; i < 6; i++) {
+                    KerdesKilep(i)
+                }
+                break;
+            case "a":
+                emberke.style.backgroundImage = "url('ősZsiga/bal"+zsiga+".png')";
+                samy -= 5;
+                if (samy <= - 47.5) {
+                    samy = -47.5;
+                }
+                emberke.style.left = samy + 'vw';
+                TolosKilep()
+                for (let i = 1; i < 6; i++) {
+                    KerdesKilep(i)
+                }
+                break;
+
+            default:
+                break;
+        }
+        console.log(samx, samy)
+
+    }
+    
+</script>
+</html>
