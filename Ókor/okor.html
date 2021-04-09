@@ -151,33 +151,48 @@
     function SubmitValasz(kerdessorszam){
         if((randomFeladat[kerdessorszam]).tipus == 1){
             let jeloltValasz = document.getElementById("kijelolt")
+            document.getElementById("vaza"+x).style.backgroundImage = "url('vaza_torott.png')"
             if(jeloltValasz.innerHTML == (randomFeladat[kerdessorszam]).jovalasz){
-                Felfordít(x)
                 eltaltvalasz[kerdessorszam] = true;
+                document.getElementById("vaza" + x).innerHTML = "<div id='papir"+x+"' class='papir'></div>";
+            }else{
+                eltaltvalasz[kerdessorszam] = true;
+                document.getElementById("vaza" + x).innerHTML = "<div id='papir"+x+"' class='víz'></div>";
+                alert("A víz lemosta a kötést!")
             }
         }else if((randomFeladat[kerdessorszam]).tipus == 2){
+            document.getElementById("vaza"+x).style.backgroundImage = "url('vaza_torott.png')"
             if(document.getElementById("evszam"+kerdessorszam).value == (randomFeladat[kerdessorszam]).valasz){
-                Felfordít(x)
+                document.getElementById("vaza" + x).innerHTML = "<div id='papir"+x+"' class='papir'></div>";
                 eltaltvalasz[kerdessorszam] = true;
+            }else{
+                eltaltvalasz[kerdessorszam] = true;
+                document.getElementById("vaza" + x).innerHTML = "<div id='papir"+x+"' class='víz'></div>";
+                
             }
         }
         
+        KerdesKilep(x)
     }
     function Kotozes(z){
         if(papir[z] != true){
-            zsiga++;
+            if(document.getElementById("papir"+z).className == "papir"){
+                zsiga++;
+                document.getElementById("papir"+z).style.backgroundImage = "url('guriga_ures.png')"
+            }else if(document.getElementById("papir"+z).className == "víz") {
+                zsiga--;
+                alert("A víz lemosta a kötést!")
+                document.getElementById("papir"+z).style.backgroundImage = "url('uresviz.png')"
+                if (zsiga < 0) {
+                    alert("Zsiga nem tudta betekreni magát")
+                    location.reload();
+                }
+            }
             emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
-            document.getElementById("papir"+z).style.backgroundImage = "url('guriga_ures.png')"
- 
-            papir[z] = true
+                papir[z] = true
         }else{
             alert("Ezt a köteget már elhasználtad!")
         }
-    }
-    //Kövek felfordítása
-    function Felfordít(asd) {
-        document.getElementById("vaza" + asd).innerHTML = "<div id='papir"+asd+"' class='papir'></div>";
-        document.getElementById("vaza"+asd).style.backgroundImage = "url('vaza_torott.png')"
     }
     //Karakter mozgastása
     function Mozgás(event) {
@@ -185,10 +200,13 @@
         billentyu = billentyu.toLowerCase();
         //A szarkofág helye
         if (samy <= 10 && samy >= -10 && samx <= 0 && samx >= -40 && billentyu == "e") {
-            if(zsiga >= 5){
-                SzarkofagJatek()
-            }else{
-                alert("Zsiga még nem készült fel a mumifikálásra")
+            for (let i = 0; i < eltaltvalasz.length; i++) {
+                if (eltaltvalasz[i] != true) {
+                    continue
+                }
+                if (i == 5) {
+                    TolosJatek();
+                }
             }
         }
         //A kő1 helye
