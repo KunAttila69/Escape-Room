@@ -18,6 +18,14 @@ div{
     top: 0vw;
     border-bottom: 5px solid black;
 }
+#ablak{
+    background-image: url("ablak.png");
+    height: 15vw;
+    width: 15vw;
+    position: relative;
+    left: 42.5vw;
+    background-size: cover;
+}
 #forditos1{
     background-image: url("lada.png");
     background-size: cover;
@@ -173,14 +181,14 @@ input::-webkit-inner-spin-button {
     margin: auto;
     width: 350px;
     height: 450px;
-    background-color: aqua;
+    background-image: url("torony.png");
 }
 #tarto div{
     height: 50px;
     width:  50px;
     float: left;
     position: unset;
-    background-color: blueviolet;
+    background-color: transparent;
     box-sizing: border-box;
 }
 .ut{

@@ -12,7 +12,9 @@
 <body onkeydown="Mozgás(event)">
     <div id="emberke"></div>
     <div id="main">
-        <div id="kijarat"></div>
+        <div id="kijarat">
+            <div id="ablak"></div>
+        </div>
         <div id="forditos1"></div>
         <div id="forditos2"></div>
         <div id="forditos3"></div>
@@ -24,6 +26,22 @@
                 <div id="nagykepContent">
                     <div id="tarto">
                         <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         <div class="ut" id="ut0"></div>
                         <div></div>
                         <div></div>
@@ -31,59 +49,43 @@
                         <div></div>
                         <div></div>
                         <div></div>
-                        <div class="ut" id="ut1"></div>
+                        <div  class="ut" id="ut1"></div>
                         <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
-                        <div class="ut" id="ut2"></div>
+                        <div  class="ut" id="ut2"></div>
                         <div></div>
-                        <div class="ut" id="ut6"></div>
-                        <div class="ut" id="ut7"></div>
-                        <div class="ut" id="ut8"></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         <div></div>
                         <div></div>
                         <div class="ut" id="ut3"></div>
                         <div class="ut" id="ut4"></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         <div class="ut" id="ut5"></div>
                         <div></div>
-                        <div class="ut" id="ut9"></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div  class="ut" id="ut7"></div>
+                        <div  class="ut" id="ut6w"></div>
                         <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
+                        <div  class="ut" id="ut8"></div>
                         <div></div>
-                        <div class="ut" id="ut10"></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div class="ut" id="ut12"></div>
-                        <div class="ut" id="ut11"></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div class="ut" id="ut13"></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div class="ut" id="ut14"></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div class="ut" id="ut15"></div>
                         <div></div>
                         <div></div>
                     </div>
@@ -139,7 +141,7 @@
     let y = 0
     let x = 0
     let zsiga = 0
-    let utterv = ["s","s","s","s","d","d","w","d","d","s","s","s","a","s","s","s"]
+    let utterv = ["s","s","s","s","d","s","s","a","s"]
     let jelenlegiut = 0;
     let toronyjatek;
 
@@ -228,18 +230,18 @@
                 document.getElementById("ut"+jelenlegiut).style.backgroundColor = "yellow";
                 jelenlegiut++
                 console.log(jelenlegiut)
-                if(jelenlegiut == 16){
+                if(jelenlegiut == 8){
                     alert("Kijutottál a toronyból!")
                 }
             }
         }
         else{
         //A kijárata helye
-        if (samy <= 5 && samy >= -25 && samx <= -10 && samx >= -25 && billentyu == "e") {
-            if(zsiga >= 5){
+        if (samy <= 5 && samy >= -10 && samx <= -25 && samx >= -30 && billentyu == "e") {
+            if(true){
                 TolosJatek()
             }else{
-                alert("Zsiga még nem elég erős")
+                alert("Zsigának még nem elég hosszú a haja")
             }
         }
         //A kő1 helye
