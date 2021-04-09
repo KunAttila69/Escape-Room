@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+}
+body{
+    overflow: hidden;
+}
+div{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+#szarkofag{
+    background-image: url("szarkofag1.png");
+    width: 22.5vw;
+    height: 22.5vw;
+    background-size: cover;
+    left: 38.5vw;
+    top: 20vh;
+}
+#vaza1{
+    background-image: url("vaza.png");
+    background-size: cover;
+    left: 25vw;
+    top: 70vh;
+   
+}
+#vaza2{
+    background-image: url("vaza.png");
+    background-size: cover;
+    left: 85vw;
+    top: 70vh;
+
+}
+#vaza3{
+    background-image: url("vaza.png");
+    background-size: cover;
+    left: 65vw;
+    top: 70vh;
+ 
+  
+}
+#vaza4{
+    background-image: url("vaza.png");
+    background-size: cover;
+    left: 5vw;
+    top: 70vh;
+  
+}
+#vaza5{
+    background-image: url("vaza.png");
+    background-size: cover;
+    left: 45vw;
+    top: 70vh;
+    
+}
+div p{
+    margin-top: 4vh;
+    color: black;
+    font-size: 20px;
+}
+#main{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("padlookor.png");
+}
+
+#nagykep{
+    border-radius: 25px;
+    border:  6px solid rgb(105, 57, 18);
+    display: none;
+    background-color: rgb(148, 87, 7);
+    width: 75vw;
+    height: 50vh;
+    position: absolute;
+    left: 12.5vw;
+    top: 25vh;
+    z-index: 2;
+}
+#nagykepHatter{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(116, 116, 116, 0.782);
+    z-index: 4;
+}
+
+#exit:hover {
+    font-size: 3.25vh;
+    transition: 0.3s;
+    padding: 1px ;
+    width: 3.5vh;
+    height: 3.5vh;
+    cursor: pointer;
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);}
+
+
+#exit{
+    font-weight: bold;
+    padding-top: auto;
+    text-align: center;
+    font-size: 2.75vh;
+    color: burlywood;
+    border: 2px solid rgb(94, 66, 14);
+    background-color: rgb(179, 132, 6);
+    width: 3vh;
+    height: 3vh;
+    padding-top: auto;
+    text-align: center;
+    border-radius: 50%;
+    font-family:Arial, Helvetica;
+}
+#nagykepContent{
+    border: 4px dashed yellow ;
+    width: 50vw;
+    height: 40vh;
+    position: absolute;
+    left: calc(20vw - 10px);
+    top: calc(5vh);
+    background-color: rgb(201, 139, 5);
+}
+#kijelzo{
+    height: 12.5vh;
+    padding-top: 2vh;
+    background-color: seagreen;
+    color: chartreuse;
+    text-align: center;
+    font-size: 7.5vh;
+}
+#szamok button{
+    position: relative;
+    top: 15vh;
+    left: 0.5vw;
+    border-radius: none;
+    border: 4px solid black;
+    background-color: rgb(116, 116, 116);
+    margin: 0;
+    width: 30%;
+    height: 50px;
+}
+#szamok{
+    position: relative;
+    left: 1vw;
+    top: 2.25vh;
+}
+#emberke {
+    background-image: url('ősZsiga/elol0.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    margin: calc(50vw - 125px);
+    margin-top: calc(50vh - 125px);
+    position: absolute;
+    z-index: 3;
+}
+#kerdesHatter1, #kerdesHatter2, #kerdesHatter3, #kerdesHatter4, #kerdesHatter5{
+    border: 6px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    display: none;
+    background-image: linear-gradient(rgb(124, 85, 34), rgb(163, 120, 2));
+    width: 75vw;
+    height: 50vh;
+    position: absolute;
+    left: 12.5vw;
+    top: 25vh;
+    z-index: 4;
+}
+#kerdes1,#kerdes2,#kerdes3,#kerdes4,#kerdes5{
+    text-align: center;
+    margin-top: 1vw;
+    font-size: 2.5vw;
+}
+#valaszok1,#valaszok2,#valaszok3,#valaszok4,#valaszok5{
+    border: 4px solid #fffd69;
+    border-radius: 25px;
+    background-image: linear-gradient(rgb(179, 176, 54), rgb(182, 131, 21), rgb(102, 83, 32));
+    position: absolute;
+    width: 50vw;
+    height: 35vh;
+    left: 15%;
+}
+#valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button,#valaszok5 button{
+    background-color: rgb(156, 94, 0);
+    border-radius: 25px;
+    width: 45vw;
+    height: 5vh;
+    margin: 1vw;
+    margin-left: 2.5vw;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+#valaszok1 button:hover,#valaszok2 button:hover,#valaszok3 button:hover,#valaszok4 button:hover,#valaszok5 button:hover {
+    cursor: pointer;
+    border: 3px solid rgb(7, 7, 7);
+    box-shadow: 3px 5px 15px rgb(43, 40, 40);
+    
+}
+
+#valaszGomb:hover {
+    cursor: pointer;
+    font-weight: bold;
+    border: 3px solid rgb(41, 44, 41);
+    width: 21vw;
+    height: 6vh;
+    box-shadow: 3px 6px 15px rgb(20, 20, 20);
+}
+
+#valaszGomb{
+    background-color: rgb(156, 94, 0);
+    padding: 5px;
+    border-radius: 25px;
+    position: relative;
+    margin-left: 26.25vw;
+    margin-top: 37vh;
+    width: 20vw;
+    height: 5vh;
+    font-size: 3vw;
+    padding: 0;
+}
+#evszam{
+    width: 40vw;
+    height: 5vh;
+    margin: 5vw;
+    font-size: 4vh;
+    text-align: center;
+    -webkit-appearance: none;
+}
+#evszam1,#evszam2,#evszam3,#evszam4,#evszam5{
+    width: 40vw;
+    height: 5vh;
+    margin: 5vw;
+    font-size: 4vh;
+    text-align: center;
+    -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#kijelolt{
+    background-color: gray;
+}
+.papir{
+    width: 100px;
+    height: 75px;
+    margin: 50px;
+    background: url("guriga.png");
+    z-index: 2;
+    background-size: cover;
+}
+#teto{
+    width: 300px;
+    height: 300px;
+    margin-left: 300px;
+    background-image: url("szarkofag2.png");
+    background-size: cover;
+}
+#kicsiSzarkofag{
+    width: 300px;
+    height: 300px;
+    background-image: url("szarkofag3.png");
+    background-size: cover;
+}
+#dragged{
+    display: none;
+}
