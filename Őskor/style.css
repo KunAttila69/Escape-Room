@@ -152,7 +152,6 @@ div p{
     left: 15%;
 }
 #valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button,#valaszok5 button{
-    background-color: rgb(255, 255, 255);
     border-radius: 25px;
     width: 45vw;
     height: 5vh;
@@ -202,9 +201,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-#kijelolt{
-    background-color: gray;
-}
+
 .hús{
     width: 200px;
     height: 150px;
@@ -255,4 +252,7 @@ input::-webkit-inner-spin-button {
     background-size: cover;
     margin-left: 8.7vw;
     margin-top: 2.5vh;
+}
+#kijelolt{
+    background-color: rgb(255, 0, 0)  ;
 }

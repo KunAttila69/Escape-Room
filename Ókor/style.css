@@ -181,7 +181,6 @@ div p{
     left: 15%;
 }
 #valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button,#valaszok5 button{
-    background-color: rgb(156, 94, 0);
     border-radius: 25px;
     width: 45vw;
     height: 5vh;
