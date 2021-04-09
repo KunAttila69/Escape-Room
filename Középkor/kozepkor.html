@@ -78,7 +78,7 @@
                         <div></div>
                         <div></div>
                         <div  class="ut" id="ut7"></div>
-                        <div  class="ut" id="ut6w"></div>
+                        <div  class="ut" id="ut6"></div>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -193,33 +193,48 @@
         if((randomFeladat[kerdessorszam]).tipus == 1){
             let jeloltValasz = document.getElementById("kijelolt")
             if(jeloltValasz.innerHTML == (randomFeladat[kerdessorszam]).jovalasz){
-                Felfordít(x)
+                document.getElementById("forditos" + x).innerHTML = "<div id='sampon"+x+"' class='sampon'></div>";
+                eltaltvalasz[kerdessorszam] = true;
+            }else{
+                document.getElementById("forditos" + x).innerHTML = "<div id='sampon"+x+"' class='ollo'></div>";
                 eltaltvalasz[kerdessorszam] = true;
             }
         }else if((randomFeladat[kerdessorszam]).tipus == 2){
             if(document.getElementById("evszam"+kerdessorszam).value == randomFeladat[kerdessorszam].valasz){
-                Felfordít(x)
+                document.getElementById("forditos" + x).innerHTML = "<div id='sampon"+x+"' class='sampon'></div>";
+                eltaltvalasz[kerdessorszam] = true;
+            }else{
+                document.getElementById("forditos" + x).innerHTML = "<div id='sampon"+x+"' class='ollo'></div>";
                 eltaltvalasz[kerdessorszam] = true;
             }
+            
+        
         }
+        KerdesKilep(x)
+        document.getElementById("forditos" + x).style.backgroundImage = "url('nyitott_lada.png')"
+        document.getElementById("forditos" + x).style.width = "220px"
         
     }
     function Eves(z){
         if(hus[z] != true){
-            zsiga++;
+            if(document.getElementById("sampon"+z).className == "sampon"){
+                zsiga++;
+                document.getElementById("sampon"+z).style.backgroundImage = "url('samponures.png')"
+            }else if(document.getElementById("sampon"+z).className == "ollo") {
+                zsiga--;
+                alert("Zsigának levágták a haját")
+                if (zsiga < 0) {
+                    alert("Zsigának nem sikerült kijutni a toronyból")
+                    location.reload();
+                }
+            }
             emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
-            document.getElementById("sampon"+z).style.backgroundImage = "url('samponures.png')"
-            hus[z] = true
+                papir[z] = true
         }else{
             alert("Ezt a sampont már elhasználtad!")
         }
     }
-    //Kövek felfordítása
-    function Felfordít(asd) {
-        document.getElementById("forditos" + asd).style.backgroundImage = "url('nyitott_lada.png')"
-        document.getElementById("forditos" + asd).style.width = "220px"
-        document.getElementById("forditos" + asd).innerHTML = "<div id='sampon"+asd+"' class='sampon'></div>";
-    }
+    
     //Karakter mozgastása
     function Mozgás(event) {
         let billentyu =  event.key;
@@ -230,7 +245,7 @@
                 document.getElementById("ut"+jelenlegiut).style.backgroundColor = "yellow";
                 jelenlegiut++
                 console.log(jelenlegiut)
-                if(jelenlegiut == 8){
+                if(jelenlegiut == 9){
                     alert("Kijutottál a toronyból!")
                 }
             }
@@ -238,10 +253,13 @@
         else{
         //A kijárata helye
         if (samy <= 5 && samy >= -10 && samx <= -25 && samx >= -30 && billentyu == "e") {
-            if(true){
-                TolosJatek()
-            }else{
-                alert("Zsigának még nem elég hosszú a haja")
+            for (let i = 0; i < eltaltvalasz.length; i++) {
+                if (eltaltvalasz[i] != true) {
+                    continue
+                }
+                if (i == 5) {
+                    TolosJatek();
+                }
             }
         }
         //A kő1 helye
