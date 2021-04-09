@@ -1,0 +1,331 @@
+body {
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+}
+div{
+    width: 175px;
+    height: 110px;
+    position: absolute;
+}
+#fal{
+    background-image: url("fal.png");
+    width: 100vw;
+    height: 15vw;
+    left: 0vw;
+    top: 0vw;
+    border-bottom: 5px solid black;
+}
+#ajto{
+    background-image: url("ajtó.png");
+    height: 15.5vw;
+    width: 7.75vw;
+    left: 35vw;
+    background-size: cover;
+}
+#szef{
+    background-image: url("szef.jpg");
+    width: 10.5vw;
+    height: 10.25vw;
+    background-size: cover;
+    left: 10vw;
+    top: 25vh;
+}
+#forditos1{
+    background-image: url("asztal.png");
+    background-size: cover;
+    width: 15vw;
+    height: 14vw;
+    padding-top: 3vw;
+    padding-left: 2vw;
+    box-sizing: border-box;
+    left: 5vw;
+    top: 60vh;
+}
+#forditos2{
+    background-image: url("szekreny.png");
+    background-size: cover;
+    width: 15vw;
+    height: 20vw;
+    left: 80vw;
+    top: 5vh;
+}
+#forditos3{
+    background-image: url("TVasztal.png");
+    background-size: cover;
+    width: 20vw;
+    height: 14vw;
+    left: 50vw;
+    top: 20vh;
+    padding-top: 6vw;
+    padding-left: 15vw;
+    box-sizing: border-box;
+}
+#forditos4{
+    background-image: url("kanape.png");
+    background-size: cover;
+    width: 30vw;
+    height: 22vw;
+    left: 47.5vw;
+    top: 50vh;
+    padding-top: 11.75vw;
+    padding-left: 7vw;
+    box-sizing: border-box;
+}
+#forditos5{
+    background-image: url("szőnyeg.png");
+    background-size: cover;
+    width: 15vw;
+    height: 22vw;
+    left: 28.5vw;
+    top: 50vh;
+    padding-top: 11.75vw;
+    padding-left: 7vw;
+    box-sizing: border-box; 
+}
+
+div p{
+    margin-top: 4vh;
+    color: black;
+    font-size: 20px;
+}
+#main{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("padlomodernkor.png");
+}
+#kijelzo{
+    height: 12.5vh;
+    padding-top: 2vh;
+    background-color: rgb(17, 236, 10);
+    box-shadow: 2px 10px 15px green;
+    border: 3px solid rgb(21, 153, 9);
+    border-radius: 25px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 6vh;
+}
+
+#szamok button:hover {
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#szamok button{
+    position: relative;
+    top: 15.5vh;
+    left: 0.5vw;
+    border-radius: none;
+    border: 4px solid rgb(3, 20, 255);
+    background-color: rgb(44, 255, 227);
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+    width: 30%;
+    height: 50px;
+}
+#szamok{
+    position: relative;
+    left: 1vw;
+    top: 2.25vh;
+}
+#nagykep{
+    border-radius: 25px;
+    border: 6px solid black;
+    display: none;
+    background-image: linear-gradient(gray, black);
+    width: 75vw;
+    height: 50vh;
+    position: absolute;
+    left: 12.5vw;
+    top: 25vh;
+    z-index: 2;
+}
+#nagykepHatter{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(116, 116, 116, 0.782);
+    z-index: 4;
+    
+}
+
+
+#exit:hover {
+    font-size: 3.25vh;
+    transition: 0.3s;
+    padding: 1px ;
+    width: 3.5vh;
+    height: 3.5vh;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(5, 17, 172);
+    background-color: rgb(46, 248, 255);
+   
+}
+
+
+#exit{
+    font-weight: bold;
+    border: 2px solid rgb(10, 25, 156);
+    background-color: rgb(26, 103, 245);
+    width: 3vh;
+    height: 3vh;
+    padding-top: auto;
+    text-align: center;
+    font-size: 2.75vh;
+    border-radius: 50%;
+    font-family:Arial, Helvetica;
+}
+#nagykepContent{
+    width: 50vw;
+    height: 40vh;
+    position: absolute;
+    left: calc(20vw - 10px);
+    top: calc(5vh);
+    background-color: rgb(36, 35, 35);
+    border: 3px dashed rgb(0, 117, 153);
+    border-radius: 25px;
+}
+
+#emberke {
+    background-image: url('ModernZsiga/elol.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    margin: calc(50vw - 125px);
+    margin-top: calc(50vh - 125px);
+    position: absolute;
+    z-index: 3;
+}
+#kerdesHatter1, #kerdesHatter2, #kerdesHatter3, #kerdesHatter4, #kerdesHatter5{
+    border: 6px solid rgb(5, 185, 209);
+    border-radius: 25px;
+    display: none;
+    background-image: linear-gradient(rgb(250, 250, 250), rgb(60, 16, 218));
+    width: 75vw;
+    height: 55vh;
+    position: absolute;
+    left: 12.5vw;
+    top: 25vh;
+    z-index: 4;
+}
+#kerdes1,#kerdes2,#kerdes3,#kerdes4,#kerdes5{
+    text-align: center;
+    margin-top: 1vw;
+    font-size: 2.5vw;
+}
+#valaszok1,#valaszok2,#valaszok3,#valaszok4,#valaszok5{
+    border: 4px solid rgb(35, 255, 226);
+    border-radius: 25px;
+    background-image: linear-gradient(rgb(51, 214, 173), rgb(22, 105, 153), rgb(5, 32, 187));
+    position: absolute;
+    width: 50vw;
+    height: 35vh;
+    left: 15%;
+}
+#valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button,#valaszok5 button{
+    
+    border-radius: 25px;
+    width: 45vw;
+    height: 5vh;
+    margin: 1vw;
+    margin-left: 2.5vw;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+#valaszok1 button:hover,#valaszok2 button:hover,#valaszok3 button:hover,#valaszok4 button:hover,#valaszok5 button:hover {
+    cursor: pointer;
+    border: 3px solid rgb(48, 231, 255);
+    box-shadow: 3px 5px 15px rgb(91, 236, 255);
+    
+}
+
+#valaszGomb:hover {
+    cursor: pointer;
+    font-weight: bold;
+    border: 4px solid rgb(61, 242, 255);
+    width: 21vw;
+    height: 6vh;
+    box-shadow: 3px 5px 15px rgb(60, 255, 223);
+}
+
+#valaszGomb{
+    padding: 5px;
+    border-radius: 25px;
+    position: relative;
+    margin-left: 26.25vw;
+    margin-top: 37vh;
+    width: 20vw;
+    height: 5vh;
+    font-size: 3vw;
+    padding: 0;
+}
+#evszam1,#evszam2,#evszam3,#evszam4,#evszam5{
+    width: 40vw;
+    height: 5vh;
+    margin: 5vw;
+    font-size: 4vh;
+    text-align: center;
+    -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#kijelolt{
+    background-color: gray;
+}
+.papír{
+    width: 2.5vw;
+    height: 2.5vw;
+    background: url("papír.png");
+    z-index: 2;
+    background-size: cover;
+}
+.lap{
+    background-image: url("lap.png");
+    width: 7vw;
+    height: 10vw;
+    z-index: 1;
+    display: none;
+    background-size: cover;
+    box-sizing: border-box;
+    font-size: 3.5vw;
+    text-align: center;
+}
+.lap p{
+    margin: 0;
+}
+#lap0{
+    left: 62vw;
+    top: 1vw;
+}
+#lap1{
+    left: 52vw;
+    top: 1vw;
+}
+#lap2{
+    left: 43vw;
+    top: 4vw;
+}
+#lap3{
+    left: 35vw;
+    top: 14vw;
+}
+#lap4{
+    left: 56vw;
+    top: 14vw;
+}
+#kulcs{
+    background-image: url("kulcs.png");
+    width: 6vw;
+    height: 5vw;
+    background-size: cover;
+    margin-left: 2vw;
+    margin-top: 4vw;
+}
