@@ -137,13 +137,15 @@
     let megjelelotValasz;
     let eltaltvalasz = [];
     let randomFeladat = [];
-    let hus = [];
+    let sampon = [];
     let y = 0
     let x = 0
     let zsiga = 0
     let utterv = ["s","s","s","s","d","s","s","a","s"]
     let jelenlegiut = 0;
     let toronyjatek;
+    let eltoltkő;
+    let toloskilepett;
 
     for (let i = 0; i < 6; i++) {
         feladatok = feladatok.sort(() => Math.random() - 0.5);
@@ -172,6 +174,8 @@
     function TolosKilep() {
         document.getElementById("nagykepHatter").style.display = "none";
         document.getElementById("nagykep").style.display = "none";
+        toloskilepett = true
+        toronyjatek = false
     }
     function KerdesKilep(kerdesszam){
         document.getElementById("nagykepHatter").style.display = "none";
@@ -216,7 +220,7 @@
         
     }
     function Eves(z){
-        if(hus[z] != true){
+        if(sampon[z] != true){
             if(document.getElementById("sampon"+z).className == "sampon"){
                 zsiga++;
                 document.getElementById("sampon"+z).style.backgroundImage = "url('samponures.png')"
@@ -229,7 +233,7 @@
                 }
             }
             emberke.style.backgroundImage = "url('ősZsiga/elol"+zsiga+".png')";
-                papir[z] = true
+                sampon[z] = true
         }else{
             alert("Ezt a sampont már elhasználtad!")
         }
@@ -246,6 +250,7 @@
                 jelenlegiut++
                 console.log(jelenlegiut)
                 if(jelenlegiut == 9){
+                    eltoltkő = true
                     alert("Kijutottál a toronyból!")
                 }
             }
@@ -258,7 +263,11 @@
                     continue
                 }
                 if (i == 5) {
-                    TolosJatek();
+                    if(eltoltkő != true){
+                        TolosJatek();
+                    }else if(eltoltkő == true && toloskilepett == true){
+                        window.open("https://kunattila69.github.io/Escape-Room/Modernkor/modernkor.html","_self")
+                    }
                 }
             }
         }
