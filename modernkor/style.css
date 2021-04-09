@@ -99,29 +99,18 @@ div p{
 #kijelzo{
     height: 12.5vh;
     padding-top: 2vh;
-    background-color: rgb(17, 236, 10);
-    box-shadow: 2px 10px 15px green;
-    border: 3px solid rgb(21, 153, 9);
-    border-radius: 25px;
-    color: rgb(0, 0, 0);
+    background-color: seagreen;
+    color: chartreuse;
     text-align: center;
     font-size: 6vh;
 }
-
-#szamok button:hover {
-    cursor: pointer;
-    font-size: 15px;
-}
-
 #szamok button{
     position: relative;
-    top: 15.5vh;
+    top: 15vh;
     left: 0.5vw;
     border-radius: none;
-    border: 4px solid rgb(3, 20, 255);
-    background-color: rgb(44, 255, 227);
-    font-size: large;
-    font-weight: bold;
+    border: 4px solid black;
+    background-color: rgb(116, 116, 116);
     margin: 0;
     width: 30%;
     height: 50px;
@@ -132,10 +121,8 @@ div p{
     top: 2.25vh;
 }
 #nagykep{
-    border-radius: 25px;
-    border: 6px solid black;
     display: none;
-    background-image: linear-gradient(gray, black);
+    background-color: salmon;
     width: 75vw;
     height: 50vh;
     position: absolute;
@@ -149,33 +136,14 @@ div p{
     height: 100vh;
     background-color: rgba(116, 116, 116, 0.782);
     z-index: 4;
-    
 }
-
-
-#exit:hover {
-    font-size: 3.25vh;
-    transition: 0.3s;
-    padding: 1px ;
-    width: 3.5vh;
-    height: 3.5vh;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-    border: 2px solid rgb(5, 17, 172);
-    background-color: rgb(46, 248, 255);
-   
-}
-
-
 #exit{
-    font-weight: bold;
-    border: 2px solid rgb(10, 25, 156);
-    background-color: rgb(26, 103, 245);
+    background-color: gray;
     width: 3vh;
     height: 3vh;
     padding-top: auto;
     text-align: center;
-    font-size: 2.75vh;
+    font-size: 3vh;
     border-radius: 50%;
     font-family:Arial, Helvetica;
 }
@@ -185,9 +153,7 @@ div p{
     position: absolute;
     left: calc(20vw - 10px);
     top: calc(5vh);
-    background-color: rgb(36, 35, 35);
-    border: 3px dashed rgb(0, 117, 153);
-    border-radius: 25px;
+    background-color: gray;
 }
 
 #emberke {
@@ -201,12 +167,10 @@ div p{
     z-index: 3;
 }
 #kerdesHatter1, #kerdesHatter2, #kerdesHatter3, #kerdesHatter4, #kerdesHatter5{
-    border: 6px solid rgb(5, 185, 209);
-    border-radius: 25px;
     display: none;
-    background-image: linear-gradient(rgb(250, 250, 250), rgb(60, 16, 218));
+    background-color: salmon;
     width: 75vw;
-    height: 55vh;
+    height: 50vh;
     position: absolute;
     left: 12.5vw;
     top: 25vh;
@@ -218,50 +182,26 @@ div p{
     font-size: 2.5vw;
 }
 #valaszok1,#valaszok2,#valaszok3,#valaszok4,#valaszok5{
-    border: 4px solid rgb(35, 255, 226);
-    border-radius: 25px;
-    background-image: linear-gradient(rgb(51, 214, 173), rgb(22, 105, 153), rgb(5, 32, 187));
+    background-color: rgb(1, 115, 149);
     position: absolute;
     width: 50vw;
     height: 35vh;
     left: 15%;
 }
 #valaszok1 button,#valaszok2 button,#valaszok3 button,#valaszok4 button,#valaszok5 button{
-    
-    border-radius: 25px;
     width: 45vw;
     height: 5vh;
     margin: 1vw;
     margin-left: 2.5vw;
-    font-size: 2vw;
-    font-weight: bold;
+    font-size: 1.5vw;
 }
-
-#valaszok1 button:hover,#valaszok2 button:hover,#valaszok3 button:hover,#valaszok4 button:hover,#valaszok5 button:hover {
-    cursor: pointer;
-    border: 3px solid rgb(48, 231, 255);
-    box-shadow: 3px 5px 15px rgb(91, 236, 255);
-    
-}
-
-#valaszGomb:hover {
-    cursor: pointer;
-    font-weight: bold;
-    border: 4px solid rgb(61, 242, 255);
-    width: 21vw;
-    height: 6vh;
-    box-shadow: 3px 5px 15px rgb(60, 255, 223);
-}
-
 #valaszGomb{
-    padding: 5px;
-    border-radius: 25px;
     position: relative;
     margin-left: 26.25vw;
-    margin-top: 37vh;
+    margin-top: 35vh;
     width: 20vw;
     height: 5vh;
-    font-size: 3vw;
+    font-size: 2vw;
     padding: 0;
 }
 #evszam1,#evszam2,#evszam3,#evszam4,#evszam5{

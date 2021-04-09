@@ -94,6 +94,7 @@
     let kijelzo = document.getElementById("kijelzo"); 
     let secretCode = Math.floor(Math.random() * 89999)+10000;
     secretCode = secretCode.toString();
+    let probak = 0;
     let megjelelotValasz;
     let eltaltvalasz = [];
     let randomFeladat = [];
@@ -147,6 +148,9 @@
     }
      //Széf kijelzőjének kezelése
      function SzamKijelzes(szam) {
+        if (kijelzo.innerHTML == "Hiba") {
+            ClearScreen()
+        }
         if (kijelzo.innerHTML.length <= 4) {
             kijelzo.innerHTML += szam;
         }
@@ -169,6 +173,10 @@
             kijelzo.innerHTML = "Siker"
         } else {
             kijelzo.innerHTML = "Hiba"
+            probak++;
+            if (probak == 5) {
+                location.reload();
+            }
         }
     }
     function Select(dsa){
@@ -182,13 +190,21 @@
         if((randomFeladat[kerdessorszam]).tipus == 1){
             let jeloltValasz = document.getElementById("kijelolt")
             if(jeloltValasz.innerHTML == (randomFeladat[kerdessorszam]).jovalasz){
-                Felfordít(x)
+                document.getElementById("forditos" + x).innerHTML = "<div id='papír"+x+"' class='papír'></div>";
                 eltaltvalasz[kerdessorszam] = true;
+            }else{
+                document.getElementById("forditos" + x).innerHTML = "";
+                eltaltvalasz[kerdessorszam] = true;
+                papir[x] = true
             }
         }else if((randomFeladat[kerdessorszam]).tipus == 2){
             if(document.getElementById("evszam"+kerdessorszam).value == randomFeladat[kerdessorszam].valasz){
-                Felfordít(x)
+                document.getElementById("forditos" + x).innerHTML = "";
                 eltaltvalasz[kerdessorszam] = true;
+            }else{
+                document.getElementById("forditos" + x).innerHTML = "";
+                eltaltvalasz[kerdessorszam] = true;
+                papir[x] = true
             }
         }
         for (let i = 1; i < 6; i++) {
@@ -203,10 +219,6 @@
         }else{
             alert("Nem találtál semmit")
         }
-    }
-    //Kövek felfordítása
-    function Felfordít(asd) {
-        document.getElementById("forditos" + asd).innerHTML = "<div id='papír"+asd+"' class='papír'></div>";
     }
     //Karakter mozgastása
     function Mozgás(event) {
