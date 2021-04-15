@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-hu">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,32 +8,60 @@
     <title>Game</title>
     <link rel="stylesheet" href="menu.css">
 </head>
+
 <body>
     <nav>
-    <ul>
+        <ul>
 
-        <li> <a href="https://kunattila69.github.io/Escape-Room/Őskor/oskor.html" onmousedown="sound.play()"> Játék</a></li>
-        <br>
-        <li><a href="" onmousedown="sound.play()">Beállítások</a></li>
-        <br>
-        <li><a href="" onmousedown="sound.play()">Infó</a></li>
-        <br>
-        <li><a href="" onmousedown="sound.play()">Kilépés</a></li>
+            <li> <a href="https://kunattila69.github.io/Escape-Room/Őskor/oskor.html" onmousedown="sound.play()">
+                    Játék</a></li>
+            <br>
+            <li><a onclick="megnyit()" onmousedown="sound.play()">Infó</a></li>
 
 
-    </ul>
-</nav>
+
+        </ul>
+    </nav>
+
+    <div id="hatter">
+
+        <div id="exit" onclick="kilepes()">
+            X
+        </div>
+
+        <div id="content">
+            <div id="iranyitasok">
+                <h1>Mozgás</h1>
+                <img src="wasd.jpg" alt="wasd">
+            </div>
+            <div id="interakcio">
+                <h1>Interakció</h1>
+                <img src="E.jpg" alt="E">
+            </div>
+
+        </div>
+
+    </div>
 
 
 </body>
 
-    <script>
+<script>
 
-        var sound = new Audio();
-        sound.src = "effect.mp3";
+    function megnyit() {
+        document.getElementById("hatter").style.display="block";
+    }
 
 
-    </script>
+    function kilepes() {
+        document.getElementById("hatter").style.display="none";
+    }
+
+    var sound = new Audio();
+    sound.src = "effect.mp3";
+
+
+</script>
 
 
 </html>
